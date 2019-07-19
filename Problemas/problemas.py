@@ -28,7 +28,10 @@ def _doing_taylor(grado, x):
 
     return res
 
+def polinomio():
+    pass
 
+    
 def raiz_siete():
     dato = int(input("Ingrese el dato a usar: "))
     if (dato >= 0):
@@ -52,6 +55,7 @@ def welcome():
     print("[1] Error redondeo")
     print("[2] Raiz siete")
     print("[3] Teorema de Taylor")
+    print("[4] Polinomio")
     print("[s] Salir")
     print("")
     
@@ -73,6 +77,9 @@ if __name__ == '__main__':
 
         elif command == '3':
             taylor()
+
+        elif command == '4':
+            polinomio()
 
         elif command == 'S' or command == 's':
             cont = 0
