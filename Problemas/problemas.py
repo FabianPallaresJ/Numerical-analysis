@@ -1,4 +1,4 @@
-from sympy import *
+from sympy import factorial
 import math
 
 def error_redondeo():
