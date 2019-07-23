@@ -1,3 +1,4 @@
+from sympy import *
 import math
 
 def error_redondeo():
@@ -9,24 +10,29 @@ def taylor():
     print("Polinomio de taylor para e^0.5")
     grado = int(input("A qué grado desea realizar el polinomio? "))
     x = 0.5
-    funct = round((math.e)**x,5)
+    funct = round((math.e)**x,4)
     print ("Resultado real: " + str(funct))
 
     res_taylor = _doing_taylor(grado, x)
 
-    print("Resultado aproximado: " + str(res_taylor))
+    #print("Resultado aproximado: " + str(res_taylor))
+    error = round(abs(funct - res_taylor),10)
+    print("Error en la aproximación de grado " + str(grado) + ": " + str(error))
 
 
 def _doing_taylor(grado, x):
     
     grd = 0
+    res = 0
 
     while grd <= grado:
-
-        res = 1
+        res += (x**grd)/factorial(grd)
+        res1 = round(res,4)
+        print(str(grd) + " Aproximación: " + str(res1))
         grd += 1
-
+    
     return res
+
 
 def polinomio():
     pass
