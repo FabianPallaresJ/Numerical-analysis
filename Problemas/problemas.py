@@ -1,8 +1,36 @@
-from sympy import factorial
 import math
 
-def error_redondeo():
-    pass
+#Error de redondeo para un número cuando solo se almacenan 4 digitos
+def error_redondeo(num):
+    digitos = int(num)
+
+    digitos_int = (int(str(digitos).__len__()))
+    digitos_float = (int(str(num).__len__()-1))
+    numaux = ""
+    numdig = ""
+    i = 0
+
+    while i < digitos_float + 1:
+
+        if(str(num)[i] != '.'):
+            numdig += str(num)[i]
+    
+        if(i > 4 and str(num)[i] != '.'  and numdig.__len__() >= 4):
+
+            if(str(num)[i] != '.'):
+                numaux += str(num)[i]
+        i += 1
+
+    print(numaux)
+
+    print(digitos_int)
+    print(digitos_float)
+
+    primer_res = float(numaux) * 10**-digitos_float
+    res_aux = primer_res * 10**digitos_int
+
+    result = res_aux * 10** (digitos_int - 4)
+    print(result)
 
 
 #Polinomio de taylor con 5 cifras significativas para e^0.5
@@ -25,34 +53,46 @@ def _doing_taylor(grado, x):
     grd = 0
     res = 0
 
-    while grd <= grado:
-        res += (x**grd)/factorial(grd)
+    for grd in range (grado + 1):
+        res += (x**grd)/factorial1(grd)
         res1 = round(res,4)
         print(str(grd) + " Aproximación: " + str(res1))
-        grd += 1
     
     return res
 
+
+def factorial1(num):
+    aux = num
+    result = 1
+    while aux != 1 and aux != 0:
+        result *= aux
+        aux -= 1
+
+    return result
 
 def polinomio():
     pass
 
     
 def raiz_siete():
-    dato = int(input("Ingrese el dato a usar: "))
+    dato = float(input("Ingrese el dato a usar: "))
     if (dato >= 0):
-        error = int(input("Error permitido: "))
-        vali = int(input("Valor inicial: "))
+        error = float(input("Error permitido: "))
+        vali = float(input("Valor inicial: "))
         result = 0
+        cont = 0
         
         result = (0.5 * (vali + (dato / vali)))
 
         while abs(vali - result) > error:
             vali = result
             result = (0.5 * (vali + (dato/vali)))
+            print("resultado " + str(cont) + ": " + str(result))
+            cont += 1
+            print("El error es: " + str(abs(vali-result)))
 
-        print(round(result,5))
-        print(abs(vali-result))
+        print("\nComprobación: " + str(result) + " ** 2 = " + str(result**2))
+        print("El error es: " + str(abs(vali-result)))
 
 
 def welcome():
@@ -75,7 +115,7 @@ if __name__ == '__main__':
         command = input()
 
         if command == '1':
-            error_redondeo()
+            error_redondeo(float(input("Ingrese el numero a almacenar: ")))
             break
 
         elif command == '2':
@@ -86,6 +126,7 @@ if __name__ == '__main__':
 
         elif command == '4':
             polinomio()
+            
 
         elif command == 'S' or command == 's':
             cont = 0
