@@ -11,26 +11,21 @@ def error_redondeo(num):
     i = 0
 
     while i < digitos_float + 1:
-
+        #Compruebo que no se tome el punto decimal en el valor a almacenar
         if(str(num)[i] != '.'):
             numdig += str(num)[i]
-    
-        if(i > 4 and str(num)[i] != '.'  and numdig.__len__() >= 4):
 
-            if(str(num)[i] != '.'):
-                numaux += str(num)[i]
+        #Compruebo que ya se hayan tomado los 4 dígitos a almacenar y que no se almacenen puntos
+        if(i > 4 and str(num)[i] != '.'  and numdig.__len__() >= 4): 
+            numaux += str(num)[i]
+
         i += 1
-
-    print(numaux)
-
-    print(digitos_int)
-    print(digitos_float)
 
     primer_res = float(numaux) * 10**-digitos_float
     res_aux = primer_res * 10**digitos_int
 
     result = res_aux * 10** (digitos_int - 4)
-    print(result)
+    print("El error de redondeo corresponde a:\n            E = " + str(result))
 
 
 #Polinomio de taylor con 5 cifras significativas para e^0.5
@@ -48,6 +43,7 @@ def taylor():
     print("Error en la aproximación de grado " + str(grado) + ": " + str(error))
 
 
+#Se realiza la multiplicación del teorema de Taylor
 def _doing_taylor(grado, x):
     
     grd = 0
@@ -60,7 +56,7 @@ def _doing_taylor(grado, x):
     
     return res
 
-
+#Factorial de un número (Utilizado para la función de aproximación con teorema de Taylor)
 def factorial1(num):
     aux = num
     result = 1
@@ -70,10 +66,11 @@ def factorial1(num):
 
     return result
 
+
 def polinomio():
     pass
 
-    
+#Raiz de un numero (7 en el caso de la prueba del ejercicio) y su convergencia al valor real con metodos iterativos
 def raiz_siete():
     dato = float(input("Ingrese el dato a usar: "))
     if (dato >= 0):
@@ -94,7 +91,7 @@ def raiz_siete():
         print("\nComprobación: " + str(result) + " ** 2 = " + str(result**2))
         print("El error es: " + str(abs(vali-result)))
 
-
+#Menú de usuario con los problemas a desarrollar
 def welcome():
     print("\n\n===Problemas de análisis numérico===")
     print("======Seleccione el problema======")
