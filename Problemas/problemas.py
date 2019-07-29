@@ -24,8 +24,8 @@ def error_redondeo(num):
     primer_res = float(numaux) * 10**-digitos_float
     res_aux = primer_res * 10**digitos_int
 
-    result = res_aux * 10** (digitos_int - 4)
-    print("El error de redondeo corresponde a:\n            E = " + str(result))
+    #result = res_aux * 10** (digitos_int - 4)
+    print("El error de redondeo corresponde a:\n            E = " + str(res_aux))
 
 
 #Polinomio de taylor con 5 cifras significativas para e^0.5
@@ -66,12 +66,28 @@ def factorial1(num):
 
     return result
 
+#Calculo de distancia con sus respectivos errores
+def distancia():
+    vel = float(input("Ingrese la velocidad del recorrido: "))
+    ev = float(input("Error de la velocidad: "))
+    tiempo = float(input("Ingrese el tiempo del recorrido: "))
+    et = float(input("Error del tiempo: "))
+
+    distancia = vel * tiempo
+    error_abs = (vel * ev) + (tiempo * et)
+    error_rel = ((ev / vel) + (et / tiempo)) * 100
+    print("\n\nLa distancia recorrida es de: " + str(distancia))
+    print("Con un error absoluto de: " + str(error_abs))
+    print("Por lo cual la distancia tiene un rango de variación: ")
+    print("   " + str(distancia - error_abs) + " <= d => " + str(distancia + error_abs))
+    print("\nEl error relativo es de: " + str(error_rel) + "%")
+
 
 def polinomio():
     pass
 
 #Raiz de un numero (7 en el caso de la prueba del ejercicio) y su convergencia al valor real con metodos iterativos
-def raiz_siete():
+def raiz_it():
     dato = float(input("Ingrese el dato a usar: "))
     if (dato >= 0):
         error = float(input("Error permitido: "))
@@ -95,10 +111,11 @@ def raiz_siete():
 def welcome():
     print("\n\n===Problemas de análisis numérico===")
     print("======Seleccione el problema======")
-    print("[1] Error redondeo")
-    print("[2] Raiz siete")
+    print("[1] Error de redondeo")
+    print("[2] Raiz por metodos iterativos")
     print("[3] Teorema de Taylor")
-    print("[4] Polinomio")
+    print("[4] Error en distancia recorrida")
+    print("[5] Polinomio")
     print("[s] Salir")
     print("")
     
@@ -116,12 +133,15 @@ if __name__ == '__main__':
             break
 
         elif command == '2':
-            raiz_siete()
+            raiz_it()
 
         elif command == '3':
             taylor()
 
         elif command == '4':
+            distancia()
+        
+        elif command == '5':
             polinomio()
             
 
