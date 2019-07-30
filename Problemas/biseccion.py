@@ -6,13 +6,11 @@ def check(a, b):
     if f(a) * f(b) < 0:
         return True
 
-
-def num_it():
-    pass
-
 def biseccion(f, a, b, e):
+    count = 0
     c = 0
     while b - a >= e:
+        count += 1
         c = (a + b) / 2
         if f(c) == 0:
             return c
@@ -21,6 +19,7 @@ def biseccion(f, a, b, e):
                 a = c
             else:
                 b = c
+    print("Iteraciones: " + str(count))
     return c
 
 def graph(a, b):
@@ -30,7 +29,9 @@ def graph(a, b):
     grid(True)
     show()
 
-def f(x): return (x * math.exp(x)) - math.pi
+#def f(x): return (x * math.exp(x)) - math.pi
+
+def f(x): return (math.exp(x) - math.pi * (x))
 
 if __name__ == "__main__":
     a = float(input("Defina punto a del intervalo: "))
