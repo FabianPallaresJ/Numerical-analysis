@@ -10,18 +10,29 @@ def check(a, b):
 def num_it():
     pass
 
-def biseccion(f, a, b, e):
+def triseccion(f, a, b, e):
+    d = 0
     c = 0
     while b - a >= e:
-        c = (a + b) / 2
+        c = a + ((b - a) / 3)
+        d = c + ((b - a) / 3)
         if f(c) == 0:
             return c
+
+        elif f(d) == 0:
+            return d
+
         else:
-            if f(a)  * f(c) > 0:
-                a = c
+            if f(a) * f(c) > 0:
+
+                if f(c) * f(d) > 0:
+                    a = d
+                else:
+                    a = c
+                    b = d
             else:
                 b = c
-    return c
+    return d
 
 def graph(a, b):
     x = arange(0, 20, 0.1)
@@ -29,6 +40,7 @@ def graph(a, b):
     plot(x,f)
     grid(True)
     show()
+
 
 def f(x): return (x * math.exp(x)) - math.pi
 
@@ -38,6 +50,6 @@ if __name__ == "__main__":
     e = float(input("Defina el error: "))
 
     if(check(a, b)):
-        print(biseccion(f, a , b, e))
-        print(f(biseccion(f, a , b, e)))
+        print(triseccion(f, a , b, e))
+        print(f(triseccion(f, a , b, e)))
     #graph(a, b)
