@@ -11,9 +11,11 @@ def num_it():
     pass
 
 def triseccion(f, a, b, e):
+    count = 0
     d = 0
     c = 0
     while b - a >= e:
+        count += 1
         c = a + ((b - a) / 3)
         d = c + ((b - a) / 3)
         if f(c) == 0:
@@ -32,6 +34,7 @@ def triseccion(f, a, b, e):
                     b = d
             else:
                 b = c
+    print("El numero de iteraciones es: " + str(count))
     return d
 
 def graph(a, b):
@@ -42,7 +45,9 @@ def graph(a, b):
     show()
 
 
-def f(x): return (x * math.exp(x)) - math.pi
+#def f(x): return (x * math.exp(x)) - math.pi
+
+def f(x): return (math.exp(x) - math.pi * (x))
 
 if __name__ == "__main__":
     a = float(input("Defina punto a del intervalo: "))
