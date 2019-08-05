@@ -6,12 +6,12 @@ def check(a, b):
     if f(a) * f(b) < 0:
         return True
 
-def biseccion(f, a, b, e):
+def p_falsa(f, a, b, e):
     count = 0
     c = 0
     while b - a >= e:
         count += 1
-        c = (a + b) / 2
+        c = b - ((f(b) * (a - b))/(f(a) - f(b)))
         if f(c) == 0:
             return c
         else:
@@ -31,7 +31,9 @@ def graph(a, b):
 
 #def f(x): return (x * math.exp(x)) - math.pi
 
-def f(x): return (math.exp(x) - math.pi * (x))
+#def f(x): return (math.exp(x) - math.pi * (x))
+
+def f(x): return (math.exp(-x)) - math.log(x)
 
 if __name__ == "__main__":
     a = float(input("Defina punto a del intervalo: "))
