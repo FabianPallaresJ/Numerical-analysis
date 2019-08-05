@@ -13,7 +13,7 @@ En la carpeta **problemas/** se encuentran:
 * cuadratica.py corresponde al ejercicio de modificación de la fórmula cuadrática.
 
 
-*_Los ejercicios de raíces reales de ecuaciones no lineales son:_
+_Los ejercicios de raíces reales de ecuaciones no lineales son:_
 * **newton.R**
 * **aitken.R**
 * **stefenssen.R**
