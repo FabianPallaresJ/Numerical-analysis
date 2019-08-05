@@ -1,7 +1,7 @@
 # Numerical-analysis
 _Curso de análisis numérico - Clase 2361 - PUJ 1930_
 
-## En este repositorio
+## En este repositorio 📦
 Aquí se encuentran los ejercicios propuestos, así como parciales y demás talleres del curso de análisis numérico (Clase 2361)
 
 ## Problemas 📋
@@ -21,7 +21,7 @@ _Los ejercicios de raíces reales de ecuaciones no lineales son:_
 * **metodo_secante.py**
 * **posicion_falsa.py**
 
-##Integrantes
+## Integrantes ✒️
 Los ejercicios de este repositorio fueron realizados por:
 * [Fabián Pallares](https://github.com/FabianPallaresJ)
 * [Santiago Jaramillo](https://github.com/Ljara20)
