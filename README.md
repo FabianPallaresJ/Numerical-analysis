@@ -11,7 +11,7 @@ En la carpeta **problemas/** se encuentran:
 * **polinomio.R**: Ejercicio 5 del archivo mencionado anteriormente
 * Se encuentran también los ejercicios propuestos de bisección (**biseccion.py**) y su modificación (**tri-seccion.py**)
 * cuadratica.py corresponde al ejercicio de modificación de la fórmula cuadrática
-* Los ejercicios de raíces reales de ecuaciones no lineales son:
+Los ejercicios de raíces reales de ecuaciones no lineales son:
 * **newton.R**
 * **aitken.R**
 * **stefenssen.R**
