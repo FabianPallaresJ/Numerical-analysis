@@ -14,10 +14,8 @@ En la carpeta **problemas/** se encuentran:
 
 
 _Los ejercicios de raíces reales de ecuaciones no lineales son:_
-* **newton.R**
-* **aitken.R**
-* **stefenssen.R**
-* **punto_fijo.R**
+* **Newton&Puntofijo.R**
+* **aitken.R&Stefenssen.R**
 * **metodo_secante.py**
 * **posicion_falsa.py**
 
