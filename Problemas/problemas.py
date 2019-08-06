@@ -84,7 +84,18 @@ def distancia():
 
 
 def polinomio():
-    pass
+    x = float(input("Ingrese un valor para x: "))
+    a = [0] * 5
+    for j in range(5):
+        a[j] = float(input("Ingrese valor en a: "))
+    count = 0
+    res = a[0]
+  
+    for i in range(len(a)):
+        res = (x * res) + a[i]
+        count += 2
+    print("\n\nEl resultado de la evaluación del polinomio es: " + str(res) + ". Con un minimo de operaciones de " + str(count))
+
 
 #Raiz de un numero (7 en el caso de la prueba del ejercicio) y su convergencia al valor real con metodos iterativos
 def raiz_it():
