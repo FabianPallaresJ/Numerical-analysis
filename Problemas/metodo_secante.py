@@ -1,5 +1,15 @@
-from pylab import *
 import math
+
+from matplotlib import pyplot
+
+
+def graph():
+    x = range(1, 15)
+    pyplot.plot(x, [f(i) for i in x])
+    pyplot.xlim(1, 3)
+    pyplot.ylim(-2, 2)
+    pyplot.show()
+
 
 def secante(f, a, b, e):
     count = 0
@@ -11,13 +21,6 @@ def secante(f, a, b, e):
         b = aux1
     print("Iteraciones: " + str(count))
     return b
-
-def graph(a, b):
-    x = arange(0, 20, 0.1)
-    f = x * math.exp(x) - math.pi
-    plot(x,f)
-    grid(True)
-    show()
 
 #def f(x): return (x * math.exp(x)) - math.pi
 
@@ -32,3 +35,4 @@ if __name__ == "__main__":
 
     print(secante(f, a, b, e))
     print(f(secante(f, a, b, e)))
+    graph()

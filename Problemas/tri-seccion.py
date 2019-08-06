@@ -1,5 +1,14 @@
-from pylab import *
 import math
+
+from matplotlib import pyplot
+
+
+def graph():
+    x = range(1, 15)
+    pyplot.plot(x, [f(i) for i in x])
+    pyplot.xlim(1, 3)
+    pyplot.ylim(-2, 2)
+    pyplot.show()
 
 
 def check(a, b):
@@ -34,13 +43,6 @@ def triseccion(f, a, b, e):
     print("El numero de iteraciones es: " + str(count))
     return d
 
-def graph(a, b):
-    x = arange(0, 20, 0.1)
-    f = x * math.exp(x) - math.pi
-    plot(x,f)
-    grid(True)
-    show()
-
 
 #def f(x): return (x * math.exp(x)) - math.pi
 
@@ -54,4 +56,4 @@ if __name__ == "__main__":
     if(check(a, b)):
         print(triseccion(f, a , b, e))
         print(f(triseccion(f, a , b, e)))
-    #graph(a, b)
+    graph(a, b)
