@@ -43,4 +43,4 @@ if __name__ == "__main__":
     if(check(a, b)):
         print(biseccion(f, a , b, e))
         print(f(biseccion(f, a , b, e)))
-    graph(a, b)
+    graph()

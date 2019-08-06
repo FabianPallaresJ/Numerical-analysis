@@ -56,4 +56,4 @@ if __name__ == "__main__":
     if(check(a, b)):
         print(triseccion(f, a , b, e))
         print(f(triseccion(f, a , b, e)))
-    graph(a, b)
+    graph()

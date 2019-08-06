@@ -44,4 +44,4 @@ if __name__ == "__main__":
     if(check(a, b)):
         print(p_falsa(f, a , b, e))
         print(f(p_falsa(f, a , b, e)))
-    graph(a, b)
+    graph()
