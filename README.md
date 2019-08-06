@@ -23,5 +23,5 @@ _Los ejercicios de raíces reales de ecuaciones no lineales son:_
 
 ## Integrantes ✒️
 Los ejercicios de este repositorio fueron realizados por:
-* [Fabián Pallares](https://github.com/FabianPallaresJ) - Desarrollo en Python
-* [Santiago Jaramillo](https://github.com/Ljara20) - Desarrollo en R
+* [Fabián Pallares](https://github.com/FabianPallaresJ)
+* [Santiago Jaramillo](https://github.com/Ljara20)
