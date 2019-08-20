@@ -13,6 +13,7 @@ def muller(f, x0, x1, e):
     a = 0
     b = 0
     c = 0
+    error = 0 
     xaux = 0
     count = 0
     while count < e:
@@ -41,7 +42,9 @@ def muller(f, x0, x1, e):
         x1 = x2
         x2 = xaux
 
-    print("Resultado raíz = " + str(xaux))
+        error = f(xaux)
+        print("Resultado raíz = " + str(xaux))
+        print("Error= " + str(error))
     print("Iteraciones: " + str(count))
 
 #def f(x): return (x * math.exp(x)) - math.pi
